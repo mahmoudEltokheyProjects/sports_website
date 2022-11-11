@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>account page</title>
+		<meta name="description" content="This page For Registeration and login">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="account_style.css">
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+	</head>
+	<body>
+        <!-- ################################## navbar section ################################# -->
+		<div class="navbar" id="navbarId">
+			<div class="navbarContainer">			
+				<!-- ************ left part : logo ************ -->
+				<div class="logo">
+					<img src="images/logo.png" alt="image not found">
+				</div>
+                <!-- menubar icon -->
+				<input type="checkbox" id="checkboxId">
+				<label   class="menubarLabel"  for="checkboxId" id="menubarLabelId">
+					<div class="menubarDiv1" id="menubarId"></div>
+					<div class="menubarDiv2" id="menubarId"></div>
+					<div class="menubarDiv3" id="menubarId"></div>
+				</label>
+				<!-- ************ right part : links ************ -->
+				<div class="links">
+					<ul>
+						<li> <a href="index.html">home <span></span><span></span> </a></li>
+						<li> <a href="#">products <span></span><span></span> </a></li>
+						<li> <a href="#home">about <span></span><span></span> </a></li>
+						<li> <a href="#home">contact <span></span><span></span></a></li>
+						<li> <a href="account.html">account <span></span><span></span> </a></li>
+						<li> <a href="#home"><img src="images/cart.png" alt="image not found"></a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+        <!-- ################################## account section ################################# -->
+        <div class="account" id="accountId">
+            <div class="accountContainer">
+                <!-- /////////////// left part : account image /////////////// -->
+                <div class="accountImg">
+                    <img src="images/image1.png" alt="image not found">
+                </div>
+                <!-- /////////////// right part : account form /////////////// -->
+                <div class="accountForm">
+                    <!-- ========== form header ========== -->
+                    <div class="accountHeader">
+                        <span class="loginHeadSpan  active">login</span>
+                        <span class="registerHeadSpan">register</span>
+                    </div>
+                    <!-- ########### container of login && regsiteration form ########### -->
+                    <div class="formContainer" id="formContainerId" >
+                        <!-- ++++++++++++ login form +++++++++++++ -->
+                        <div class="loginForm">
+                            <form>
+                                <input type="text"     name="usernameName" id="usernameId" placeholder="Username">
+                                <input type="password" name="passwordName" id="passwordId" placeholder="Password">
+                                <input type="button"   name="loginName"    id="loginId"    value="login">
+                                <a href="#" class="forgetPass"> Forget password ? </a>
+                            </form>
+                        </div>
+                        <!-- ++++++++++ regiseration form +++++++++ -->
+                        <div class="regiserForm">
+                            <form>
+                                <input type="text"     name="username2Name" id="username2Id" placeholder="Username">
+                                <input type="email"    name="emailName"     id="emaild"      placeholder="Email">
+                                <input type="password" name="password2Name" id="password2Id" placeholder="Password">
+                                <input type="button"   name="registerName"  id="registerId"  value="register">
+                            </form>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+	   <script src="account_javascript.js"></script>
+	</body>
+</html>

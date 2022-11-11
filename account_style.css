@@ -1,0 +1,451 @@
+/*
+	##################################
+				Globals
+	##################################
+*/
+*
+{
+	font-family: sans-serif ;
+	box-sizing: border-box ;
+	-webkit-box-sizing: border-box ;
+	-moz-box-sizing: border-box ;
+}
+body
+{
+	margin: 0 ;
+    padding: 0 ;
+}
+/* ################################## navbar section ################################# */
+.navbar
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #f00 ;  */
+}
+.navbar 	.navbarContainer
+{
+	width: 90% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;
+/*	border: 2px solid #0f0 ;  */
+}
+/*  ############ left part : logo ############ */
+.navbar 	.navbarContainer	.logo
+{
+	width: 23% ;
+	float: left ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #00f ;   */
+}
+.navbar 	.navbarContainer	.logo 	img
+{
+	width: 150px ; 
+	height: 53px ;
+    margin-top: 15px ;
+    margin-left: 20px ;
+}
+
+/* ############ menubar icon ############ */
+.navbar     .navbarContainer     input
+{
+	position: absolute ;
+	top: 5px ;
+	right: 5px ;
+	display: none ;
+}
+.menubarLabel
+{
+    position: absolute;
+	top:15px; 
+	right: 8px ;
+	cursor: pointer;
+	/* from  "0px" to "970px" في الشاشات المحمول  */
+	display: none ;
+/*	border: 2px solid #ff0;    */
+}
+.navbar .navbarContainer  .menubarLabel .menubarDiv1  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv2  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv3  
+{
+	margin: 6px;
+	width: 40px;
+	height: 5px;
+	padding: 1px;
+	background-color: #000 ;
+	/*smoothيحصلالتحولبشكلxاليعلامةالmenubariconعشانلمايحصلتحويللل*/transition: 0.4s ;
+	-webkit-transition:;
+	-moz-transition:;
+	-ms-transition:;
+	-o-transition:;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv1  
+{
+	transform: rotate(-45deg) translate(-7px, 9px) ;
+	-webkit-transform: rotate(-45deg) translate(-7px, 9px) ;
+	-moz-transform: rotate(-45deg) translate(-7px, 9px) ;
+	-ms-transform: rotate(-45deg) translate(-7px, 9px) ;
+	-o-transform: rotate(-45deg) translate(-7px, 9px) ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv2 
+{
+	opacity: 0 ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv3  
+{
+	transform: rotate(45deg) translate(-7px, -9px) ;
+}   
+.navbar .navbarContainer input:checked   ~     .links
+{
+	display: block ;
+}
+/* ############ right part : links ########### */
+.navbar  .navbarContainer   .links
+{
+	width: 77% ;
+	float: right;
+	text-align: right ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #00f ;   */
+}
+.navbar  .navbarContainer   .links	ul
+{
+	list-style: none ;
+}
+.navbar  .navbarContainer   .links	ul	li
+{
+/*    position: relative;  */
+	display: inline-block ;
+    padding: 5px ;
+    margin: 5px ;
+}
+.navbar  .navbarContainer   .links	ul	li   a
+{
+    position: relative; 
+	text-decoration: none ;
+	color: #000 ;
+	margin-right: 10px ;
+	font-size: 15px ;
+	font-weight: bold ;
+    padding: 15px ;
+	text-transform: uppercase ;
+/*	border: 2px solid #0ff ;   */
+}
+.navbar  .navbarContainer   .links  	ul	    li       a		img
+{
+	width: 20px ;
+	height: 20px;
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-left:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-left:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;    
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-right:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-right:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/*############################## hover on navbar ############################### */
+ /* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li   a:hover      span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-left:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-left:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-right:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-right:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:940px)
+{
+    .navbar .navbarContainer  .menubarLabel
+    {
+        display: block ;
+    }
+    .navbar .navbarContainer
+    {
+        width: 100% ;
+    }
+    /* ************** logo part ******************** */
+    .navbar .navbarContainer .logo
+    {
+        width: 250px ; 
+    }
+    /* ************** links part ******************** */
+    .navbar .navbarContainer  .links
+    {
+        width: 100% ; 
+        display: block ;
+        margin: 10px 0px ; 
+        text-align: center ;
+/*		border: 2px solid #f0f ;  */
+        display: none ;
+    }
+    /* ************** links part ******************** */
+    .navbar     .navbarContainer    .links    ul   li  
+    {
+        display: block ; 
+        margin: 35px 0px ;
+    }
+}
+/*  ################################## account section #################################  */
+.account
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+	background-color: rgb(255,230,229) ;
+/*    border: 2px solid #f00 ;    */
+}
+.account    .accountContainer
+{
+    width: 85% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 80px auto ;
+/*    border: 2px solid #0f0 ;   */
+}
+/*  /////////////// left part : account image ///////////////  */
+.account    .accountContainer   .accountImg
+{
+    width: 50% ; 
+    float: left ;
+    height: auto ;
+    overflow: hidden ;
+    margin-right: 5% ;
+/*    border: 2px solid #00f ;      */
+}
+.account    .accountContainer   .accountImg     img
+{
+    width: 100% ;
+}
+/*  /////////////// right part : account form ///////////////    */
+.account    .accountContainer   .accountForm
+{
+    width: 40% ; 
+    float: right;
+    height: auto ;
+    overflow: hidden ;
+    margin-left: 5% ;
+    background-color: #fff ;
+/*    border: 2px solid #f0f ;   */
+}
+/* ========== form header ========== */
+.account    .accountForm    .accountHeader
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    text-align: center ;
+    padding: 15px ;
+    margin: 20px 0px ;
+/*    border: 2px solid #0ff ; */
+}
+.account    .accountForm    .accountHeader  .loginHeadSpan      ,
+.account    .accountForm    .accountHeader  .registerHeadSpan 
+{
+    text-transform: capitalize ;
+    font-size: 20px ;
+    margin: 5px ;
+    padding: 8px  25px ; 
+    font-weight: bold ;
+    cursor: pointer ;
+}
+/* ########### container of login && regsiteration form ########### */
+.account    .accountForm    .formContainer
+{
+    width: 200% ;
+    height: auto ;
+    overflow: hidden ;    
+    transition: all 0.8s ease-in-out ;
+/*    border: 2px solid #ff0 ;    */
+}
+/*  ++++++++++++ login form +++++++++++++ */
+/*  ++++++++++++ registeration form +++++++++++++ */
+.account    .accountForm    .loginForm    ,
+.account    .accountForm    .regiserForm
+{
+    /*  50% from 200% = 100%  يعني form Container هتاخذ نصف مساحة ال form كل  */
+    width: 50% ;
+    float: left ;
+    margin-top: 50px ;
+    padding: 20px ;
+/*    border : 2px solid #FF5722 ;    */
+}
+.account    .accountForm    .loginForm      form   ,
+.account    .accountForm    .regiserForm    form 
+{
+    text-align: center ;
+    padding: 15px 0px 55px 0px ;
+}
+/* all inputFields in the form */
+.account    .accountForm    .loginForm     form    input    ,
+.account    .accountForm    .regiserForm   form    input
+{
+    width: 100% ;
+    margin-bottom: 25px ; 
+    padding: 10px; 
+    border: 1px solid #ccc ;
+    outline: 0 ;
+}
+/*  login button */
+.account    .accountForm    .loginForm       form    input[ type="button" ]   ,
+.account    .accountForm    .regiserForm     form    input[ type="button" ]
+{
+    border-radius: 20px ;
+    background-color: #FF5722 ;
+    border: 1px solid #FF5722 ; 
+    color: #fff ;
+    text-transform: capitalize ;
+    font-size: 17px ; 
+    padding: 10px ;
+    cursor: pointer ;
+    -webkit-transition: all 0.5s ease-in-out ;
+    -moz-transition: all 0.5s ease-in-out ;
+    transition: all 0.5s ease-in-out ;
+}
+.account    .accountForm    .loginForm       form    input[ type="button" ]:hover ,
+.account    .accountForm    .regiserForm     form    input[ type="button" ]:hover 
+{
+    background-color: #cc1122 ;
+    border: 1px solid #cc1122 ; 
+}
+/*  forget Password link */
+.account    .accountForm    .loginForm     form    .forgetPass
+{
+    display: block ;
+    text-decoration: none ;
+    color: #000 ;
+}
+/* +++++++++++++ active and hidden class +++++++++++++ */
+.active
+{
+    border-bottom: 3px solid #FF5722 ;
+}
+.hidden
+{
+    display: none ;
+}
+ /* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:900px)
+{
+    .account    .accountContainer
+    {
+        width: 100% ;
+        margin: 0px auto ;
+    }
+    /*  /////////////// left part : account image ///////////////  */
+    .account    .accountContainer   .accountImg  ,
+    /*  /////////////// right part : account form ///////////////    */
+    .account    .accountContainer   .accountForm
+    {
+        width: 480px ; 
+        float: none ;
+/*        border: 2px solid #00f ;     */
+        margin: 10px auto ;
+    }
+}

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Design Clothes Website</title>
+		<meta name="description" content="This website for sell clothes">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="Design_Clothes_Website_style.css">
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+	</head>    
+	<body>
+        <!-- ========================== color box ====================== -->
+        <div class="colorBox">
+            <!-- +++++++++++++++++++++ Box 1 +++++++++++++++++++++ -->
+            <ul class="box1">
+                <!-- cogs icon -->
+                <li>
+                    <a href="#" id="cogs-icon" title="See Demo Sites!">
+                        <i class="fa fa-cogs fa-lg" id="cogsIcon"></i>
+                        <div class="panel-tooltip tooltip1">
+                           See Demo Sites
+                        </div>
+                    </a>
+                </li>
+                <!-- shopping-cart icon -->
+                <li>
+                    <a href="#" id="cart-icon" title="Buy Engage Now!">
+                        <i class="fa fa-shopping-cart fa-lg"></i>
+                        <div class="panel-tooltip tooltip2">
+                            Buy Engage Now!
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- ++++++++++++++++++ Box 2 ++++++++++++++++++ -->
+            <div class="demo-panel-content appearPanel">
+                <!-- Button -->
+                <div class="demo-panel-inner">
+                    <a href="#" class="demo-panel-btn" target="_blank">Buy Engage Now!</a>
+                </div>
+                <!-- color palette -->
+                <div class="demo-panel-inner2">
+                    <h6>Choose Accent Color:</h6>
+                    <ul class="color-palette">
+                        <!-- Give "backgroundColor" to <li></li> in javascript -->
+                        <li data-color="#f44336" class="color-1"></li>
+                        <li data-color="#9c27b0" class="color-2"></li>
+                        <li data-color="#673ab7" class="color-3"></li>
+                        <li data-color="#3f51b5" class="color-4"></li>
+                        <li data-color="#2196f3" class="color-5"></li>
+                        <li data-color="#03a9f4" class="color-6"></li>
+                        <li data-color="#00bcd4" class="color-7"></li>
+                        <li data-color="#009688" class="color-8"></li>
+                        <li data-color="#4caf50" class="color-9"></li>
+                        <li data-color="#4caf50" class="color-10"></li>
+                        <li data-color="#cddc39" class="color-11"></li>
+                        <li data-color="#ffc107" class="color-12"></li>
+                        <li data-color="#ff9800" class="color-13"></li>
+                        <li data-color="#ff5722" class="color-14"></li>
+                        <li data-color="#795548" class="color-15"></li>
+                        <li data-color="#607d8b" class="color-16"></li>
+                        <li data-color="#9c27b0" class="color-17"></li>
+                        <li data-color="#cddc39" class="color-18"></li>
+                    </ul>
+                </div>
+                <!-- images -->
+                <div class="demo-panel-inner3">
+                    <h6>Choose Demo Site:</h6>
+                    <ul>
+                    <!-- Append <li></li> and images in javascript -->
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!-- ################################## navbar section ################################# -->
+		<div class="navbar" id="navbarId">
+			<div class="navbarContainer">			
+				<!-- ************ left part : logo ************ -->
+				<div class="logo">
+					<img src="images/logo.png" alt="image not found">
+				</div>
+                <!-- menubar icon -->
+				<input type="checkbox" id="checkboxId">
+				<label   class="menubarLabel"  for="checkboxId" id="menubarLabelId">
+					<div class="menubarDiv1" id="menubarId"></div>
+					<div class="menubarDiv2" id="menubarId"></div>
+					<div class="menubarDiv3" id="menubarId"></div>
+				</label>
+				<!-- ************ right part : links ************ -->
+				<div class="links">
+					<ul>
+						<li> <a href="index.html">home <span></span><span></span> </a></li>
+						<li> <a href="#">products <span></span><span></span> </a></li>
+						<li> <a href="#home">about <span></span><span></span> </a></li>
+						<li> <a href="#home">contact <span></span><span></span></a></li>
+						<li> <a href="account.html">account <span></span><span></span> </a></li>
+						<li> <a href="#home"><img src="images/cart.png" alt="image not found"></a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+        <!-- ################################## Scroller Progressbar section ################################# -->
+        <div class="scrollerProgress"></div>
+		<!-- ################################## header section ################################# -->
+		<div class="header" id="headerId">
+			<div class="headerContainer">
+				<!-- //////////// left part : header info //////////// -->
+				<div class="headerInfo">
+					<h2>give your workout a new style!</h2>
+					<p>
+						Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit.Neque.Lorem Ipsum Dolor Sit Amet Consectetur 
+						Lorem Ipsum Dolor Amet Adipisicing Elit .
+					</p>
+					<button class="buyNowBtn">explore now <i class="fa fa-arrow-right"></i></button>
+				</div>
+				<!-- //////////// right part : header image //////////// -->
+				<div class="headerImg">
+					<img src="images/image1.png" alt="image not found">
+				</div>
+			</div>
+		</div>
+		<!-- ################################## categories section ################################# -->
+		<div class="categories" id="categoriesId">
+			<div class="categoriesContainer">
+				<!-- category 1 -->
+				<div class="categoriesBox">
+					<img src="images/category-1.jpg">
+				</div>
+				<!-- category 2 -->
+				<div class="categoriesBox">
+					<img src="images/category-2.jpg">
+				</div>
+				<!-- category 3 -->
+				<div class="categoriesBox">
+					<img src="images/category-3.jpg">
+				</div>
+			</div>
+		</div>
+		<!-- ################################## products section ################################# -->
+		<div class="products" id="productsId">
+			<div class="productsContainer">
+				<div class="productHeader">
+					<div class="productH2Container">
+						<h2 class="productH2">all products</h2>
+					</div>
+					<div class="productSelectBoxContainer">
+						<select>
+							<option value="1">sort by shorting</option>
+							<option value="2">sort by price</option>
+							<option value="3">sort by popularity</option>
+							<option value="4">sort by rating</option>
+						</select>
+					</div>
+				</div>
+                <!-- category 1 -->
+                <div class="productsBox">
+                    <img src="images/buy-1.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p class="price">&#36;50.0</p>
+                </div>
+                <!-- category 2 -->
+                <div class="productsBox">
+                    <img src="images/buy-2.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 3 -->
+                <div class="productsBox">
+                    <img src="images/buy-3.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 4 -->
+                <div class="productsBox">
+                    <img src="images/product-4.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 5 -->
+                <div class="productsBox">
+                    <img src="images/product-5.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;50.0</p>
+                </div>
+                <!-- category 6 -->
+                <div class="productsBox">
+                    <img src="images/product-4.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 7 -->
+                <div class="productsBox">
+                    <img src="images/product-7.jpg">
+                    <div class="productsPara">
+                         <p>red printed t-Shirt</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 8 -->
+                <div class="productsBox">
+                    <img src="images/product-8.jpg">
+                    <div class="productsPara">
+                         <p>block fossil watch</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 9 -->
+                <div class="productsBox">
+                    <img src="images/product-9.jpg">
+                    <div class="productsPara">
+                         <p>block sports watch</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p class="price">&#36;50.0</p>
+                </div>
+                <!-- category 10 -->
+                <div class="productsBox">
+                    <img src="images/product-10.jpg">
+                    <div class="productsPara">
+                         <p>block HRX shoes</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 11 -->
+                <div class="productsBox">
+                    <img src="images/product-11.jpg">
+                    <div class="productsPara">
+                         <p>gray nike shoes</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-full"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+                <!-- category 12 -->
+                <div class="productsBox">
+                    <img src="images/product-12.jpg">
+                    <div class="productsPara">
+                         <p>HRX block trackparts</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p class="price">&#36;75.0</p>
+                </div>
+			</div>
+		</div>
+		<!-- ################################## gallery section ################################# -->
+		<div class="gallery" id="galleryId">
+			<div class="galleryContainer">
+				<!-- left part : gallery big And Sub Imgages -->
+				<div class="galleryImg">
+					<!-- row 1 : big image -->
+					<div class="galleryBigImg">
+						<img src="images/gallery-1.jpg" name="bigImgName" alt="image not found" id="bigImgId">
+					</div>
+					<!-- row 2 : sub images -->
+					<div class="gallerySubImg">
+					  <img class="addBorder"src="images/gallery-1.jpg" name="subImg1Name" alt="image not found" id="subImg1Id">
+					  <img src="images/gallery-2.jpg" name="subImg2Name" alt="image not found" id="subImg2Id">
+					  <img src="images/gallery-3.jpg" name="subImg3Name" alt="image not found" id="subImg3Id">
+					  <img src="images/gallery-4.jpg" name="subImg4Name" alt="image not found" id="subImg4Id">
+					</div>
+
+				</div>
+				<!-- right part : gallery info  -->
+				<div class="galleryInfo">
+					<!-- row 1 : links -->
+					<div class="galleryRightPartLinks">
+						<a href="#">Home</a> / <a href="#">T-Shirt</a>
+					</div>
+					<!-- row 2 : header -->
+					<div class="galleryRightPartHeader">
+						<h2>Red Printed T-shirt by HRX</h2>
+					</div>
+					<!-- row 3 : price -->
+					<div class="galleryRightPartPrice">
+						<p>&#36;50.00</p>
+					</div>
+					<!-- row 4 : links -->
+					<div class="galleryRightPartSelectBox">
+						<select>
+							<option value="1">Select Size</option>
+							<option value="2">x large</option>
+							<option value="3">xx large</option>
+							<option value="4">xxx large</option>
+							
+						</select>
+					</div>
+					<!-- row 5 : add to cart -->
+					<div class="addToCart">
+						<span class="addToCartSpan">1</span>
+						<button class="addCartBtn">add to cart</button>
+					</div>
+					<!-- row 6 : product details -->
+					<div class="productDetails">
+						<h4>products details</h4>
+						<i class="fa fa-indent"></i>
+					</div>
+					<!-- row 7 : product details paragraph -->
+					<div class="productDetailsParagraph">
+						<p>
+							Give your summer wardrobe a style upgrade with the HRX <br>Man's Active T-shirt. Team it with a pair of shorts for your <br> morning workout or a donimd for sn avaning out with the guys . 
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ################################## related Products section ################################# -->
+		<div class="relatedProducts" id="relatedProductsId">
+			<div class="relatedProductsContainer">
+				<div class="relatedProductsHeader">
+                    <!-- ////////// left part : h2 ////////////// -->
+					<div class="relatedProductsH2Container">
+						<h2 class="relatedProductsH2">related products</h2>
+					</div>
+                    <!-- //////////right part : button ////////// -->
+                    <div class="viewMoreBtnContainer">
+                        <button id="viewMoreBtnId">view more</button>
+                    </div>
+				</div>
+                <div class="relatedProductsContainer">
+                    <!-- ************************* categories ********************* -->
+                    <!-- category 1 -->
+                    <div class="relatedProductsBox">
+                        <img src="images/product-9.jpg">
+                        <div class="relatedProductsPara">
+                             <p>block sports watch</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 2 -->
+                    <div class="relatedProductsBox">
+                        <img src="images/product-10.jpg">
+                        <div class="relatedProductsPara">
+                             <p>block HRX shoes</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 3 -->
+                    <div class="relatedProductsBox">
+                        <img src="images/product-11.jpg">
+                        <div class="relatedProductsPara">
+                             <p>gray nike shoes</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 4 -->
+                    <div class="relatedProductsBox">
+                        <img src="images/product-12.jpg">
+                        <div class="relatedProductsPara">
+                             <p>HRX block trackparts</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 5 -->
+                    <div class="relatedProductsBox hiddenProduct">
+                        <img src="images/products/product_img1.jpg">
+                        <div class="relatedProductsPara">
+                             <p>block sports watch</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 6 -->
+                    <div class="relatedProductsBox hiddenProduct">
+                        <img src="images/products/product_img2.jpg">
+                        <div class="relatedProductsPara">
+                             <p>block HRX shoes</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 7 -->
+                    <div class="relatedProductsBox hiddenProduct">
+                        <img src="images/products/product_img3.jpg">
+                        <div class="relatedProductsPara">
+                             <p>gray nike shoes</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <!-- category 8 -->
+                    <div class="relatedProductsBox hiddenProduct">
+                        <img src="images/products/product_img4.jpg">
+                        <div class="relatedProductsPara">
+                             <p>HRX block trackparts</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p class="relatedProductsPrice">&#36;50.0</p>
+                    </div>
+                    <div class="clearBoth"></div>
+                    <!-- //////////////// pagination : 5 spans //////////////// -->
+                    <div class="categoryPagination">
+                        <span class="categoryPagin active">1</span>
+                        <span class="categoryPagin">2</span>
+                        <span class="categoryPagin">3</span>
+                        <span class="categoryPagin">4</span>
+                        <span class="categoryPagin"> <i class="fa fa-arrow-right"></i> </span>
+                    </div>
+                </div>
+			</div>
+		</div>
+        <!-- ################################## smart Band section ################################# -->
+        <div class="smartBand">
+            <div class="smartBandContainer">
+                <!-- /////////// left part : image  //////////// -->
+                <div class="smartBandImg">
+                    <img src="images/watches/watch1.png" name="watchImg" alt="image not found">
+                </div>
+                <!-- /////////// right part : image  //////////// -->
+                <div class="smartBandInfo">
+                    <p class="smartBandInfoPara1">
+                        benefits of sports accelerator to the many .
+                    </p>
+                    <h3 class="smartBandInfoH3">smart band 1</h3>
+                    <p class="smartBandInfoPara2">
+                        smart band 1 Lorem Ipsum Sit Amet benefits of sports to the <br>
+                        benefits of sports to the many Ipsum Sit Amet accelerator
+                    </p>
+                    <button class="smartBandInfoBtn">hire us</button>
+                </div>
+            </div>
+        </div>
+        <!-- ##################################### testimonials section ################################ -->
+        <div class="testimonials">
+            <div class="testimonialsContainer">
+                <!-- **************** testimonials persons **************** -->
+                <!-- ///////// testimonials person 1 ///////// -->
+                <div class="testiBox">
+                    <i class="fa fa-quote-left"></i>
+                    <p class="testimonialsPara">
+                        Lorem Ipsum Sit Amet benefits of sports the many Ipsum Sit Amet Lorem Ipsum Sit Amet benefits of sports to the many Ipsum Amet benefits of sports .
+                    </p>
+                    <div class="stars">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+                    <div class="testimonialsImg">
+                        <img src="images/testimonialsImg/person1.png" alt="image not found">
+                    </div>
+                    <div class="testiPersonName">
+                        <span class="testiPersonNameSpan">mahmoud ahmed</span>
+                    </div> 
+                </div>
+                <!-- ///////// testimonials person 2 ///////// -->
+                <div class="testiBox">
+                    <i class="fa fa-quote-left"></i>
+                    <p class="testimonialsPara">
+                        Lorem Ipsum Sit Amet benefits of sports the many Ipsum Sit Amet Lorem Ipsum Sit Amet benefits of sports to the many Ipsum Amet benefits of sports .
+                    </p>
+                    <div class="stars">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+                    <div class="testimonialsImg">
+                        <img src="images/testimonialsImg/person2.png" alt="image not found">
+                    </div>
+                    <div class="testiPersonName">
+                        <span class="testiPersonNameSpan">ahmed mahmoud</span>
+                    </div> 
+                </div>
+                <!-- ///////// testimonials person 3 ///////// -->
+                <div class="testiBox">
+                    <i class="fa fa-quote-left"></i>
+                    <p class="testimonialsPara">
+                        Lorem Ipsum Sit Amet benefits of sports the many Ipsum Sit Amet Lorem Ipsum Sit Amet benefits of sports to the many Ipsum Amet benefits of sports .
+                    </p>
+                    <div class="stars">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+                    <div class="testimonialsImg">
+                        <img src="images/testimonialsImg/person3.jpg" alt="image not found">
+                    </div>
+                    <div class="testiPersonName">
+                        <span class="testiPersonNameSpan">osama ali</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!-- ################################### our sponsers section ########################### -->
+        <div class="ourSponsers">
+             <div class="ourSponsersContainer">
+                <!-- //////////// ourSponsers box 1 //////////// -->
+                <div class="sponsersBox">
+                    <img src="images/logo-coca-cola.png">
+                </div> 
+                <!-- //////////// ourSponsers box 2 //////////// -->
+                <div class="sponsersBox">
+                    <img src="images/logo-godrej.png">
+                </div>
+                <!-- //////////// ourSponsers box 1 //////////// -->
+                <div class="sponsersBox">
+                    <img src="images/logo-oppo.png">
+                </div>
+                <!-- //////////// ourSponsers box 1 //////////// -->
+                <div class="sponsersBox">
+                    <img src="images/logo-paypal.png">
+                </div>
+                <!-- //////////// ourSponsers box 1 //////////// -->
+                <div class="sponsersBox">
+                    <img src="images/logo-philips.png">
+                </div>
+            </div>
+        </div>
+        <!-- ###################################### footer section ############################### -->
+        <div class="footer">
+            <div class="footerContainer">
+                <!-- ++++++++++++++++++++ box 1 ++++++++++++++++++++ -->
+                <div class="footerBox1">
+                    <h3 class="footerBox1H3">download our app</h3>
+                    <p class="footerBox1Para">download app for android and iphone portable</p>
+                    <span class="googlePlaySpan"> <img src="images/play-store.png" alt="image not found"> </span>
+                    <span class="appStoreSpan">   <img src="images/app-store.png"  alt="image not found"> </span>
+                </div>
+                <!-- ++++++++++++++++++++ box 2 ++++++++++++++++++++ -->
+                <div class="footerBox2">
+                    <span class="logoFooterSpan"> <img src="images/logo-white.png" alt="image not found"> </span>
+                    <p class="footerBox2Para">
+                        Lorem Ipsum Sit Amet Adipisicing . benefits of sports accelerator to the many
+                    </p>
+                </div>
+                <!-- ++++++++++++++++++++ box 3 ++++++++++++++++++++ -->
+                <div class="footerBox3">
+                    <h3 class="footerBox3H3">useful links</h3>
+                    <ul>
+                        <li> <a href="#">coupons</a>    </li>
+                        <li> <a href="#">blog post</a>  </li>
+                        <li> <a href="#">our policy</a> </li>
+                        <li> <a href="#">join us</a>    </li>
+                    </ul>
+                </div>
+                <!-- ++++++++++++++++++++ box 4 ++++++++++++++++++++ -->
+                <div class="footerBox4">
+                   <h3 class="footerBox4H3">follow us</h3>
+                    <ul>
+                        <li> <a href="#">facebook</a>  </li>
+                        <li> <a href="#">twitter</a>   </li>
+                        <li> <a href="#">instagram</a> </li>
+                        <li> <a href="#">youtube</a>   </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- +++++++++ footer line && copyright +++++++++ -->
+            <div class="footerLine">
+                <span class="footerLineSpan"></span>
+                <p class="copyrightPara">Copyright ©2021 All Reserverd | This Template Is Made By Mahmoud Eltokhey</p>
+            </div>
+        </div>        
+        <script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery.nicescroll.min.js"></script>
+		<script src="Design_Clothes_Website_javascript.js"></script>
+	</body>
+</html>

@@ -1,0 +1,1663 @@
+/*
+	##################################
+				Globals
+	##################################
+*/
+* , *::before , *::after
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+:root
+{
+    --mainBk : #fc583e ;
+}
+body
+{
+    position: relative;
+    height : 2000px ;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: var(--mainBk);   */
+}
+ul
+{
+    list-style: none ;
+}
+a
+{
+    text-decoration: none;
+}
+/* ########################################## Scrollbar Style ########################################## */
+::-webkit-scrollbar
+{
+    width: 10px ;
+    height: 10px ;
+}
+/* هو الاطار اللي البكرة بتتحرك فيها */
+::-webkit-scrollbar-track
+{
+    border-radius: 10px ;
+    box-shadow: inset 0 0 10px #555;
+}
+/* هو البكرة الي بتتحرك  */
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px ;
+    background-color:  var(--mainBk) ; 
+}
+/*  scrollbar بتاعت ال corners هي الزوايا */
+::-webkit-scrollbar-corner
+{
+    display: none ;
+}
+
+/* ################################## colorBox section ################################# */
+/* ==================== color box =================== */
+.colorBox
+{
+    position: fixed;
+    right: -300px ;
+    top: 0;
+    width: 300px ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999 ;
+    transition: right 0.4s ease-in-out ;
+    /* border: 2px solid #00f ;  */
+}
+.hidePanel
+{
+    right: 0 ;
+}
+/* /////////////////// Box 1 : Two Icon /////////////////// */
+.colorBox   ul.box1
+{
+    position: absolute;
+    right : 298px ; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px ;
+    box-shadow: 0 -1px 17px 1px rgb(0 0 0 / 9%);
+    border-top-left-radius: 5px ;
+    border-bottom-left-radius: 5px ;
+    background-color: #fff ;
+    /* border: 2px solid #0f0 ;  */
+}
+/* ######### "two icons" of "box1" ######### */
+.colorBox   ul.box1 li
+{
+    display: block;
+    transition: all 0.9s ease-in-out;
+    /* border: 2px solid #000;  */
+}
+.colorBox   ul.box1     li   a    i
+{
+    color: #888 ; 
+}
+.colorBox   ul.box1     li:hover    a    i
+{
+    color: #0275d8 !important;
+}
+/* cogs icon */
+.colorBox   ul.box1 li:first-of-type
+{
+    margin-bottom: 20px ;
+}
+/* ---------- ToolTip ---------- */
+.panel-tooltip
+{
+    display: none ;     
+    position: absolute;
+    right: 50px;
+    width: 150px;
+    height: 35px;
+    line-height: 35px ;
+    border-radius: 5px ;
+    text-align: center;
+    font-size: 16px ;
+    cursor: pointer;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+.panel-tooltip:hover
+{
+    color: #fff;
+    background-color: #0275d8  ;
+}
+/* tooltip1 */
+.tooltip1
+{
+    top: 5px ;
+}
+/* tooltip2 */
+.tooltip2
+{
+    top: 46px ;
+}
+/* hide and show tooltip */
+.toggleTip
+{
+    display: none;
+}
+/* /////////////////// Box 2 /////////////////// */
+.demo-panel-content
+{
+    position: fixed;
+    top: 0;
+    width: 299px;
+    height: 100%;
+    overflow-y: scroll;
+    background: #fff;
+    font-size: 13px;
+    padding: 20px  ;
+    z-index: 999 ;
+    /* border: 5px solid #ff0 ;  */
+}
+/* +++ "Buy Engage" Button +++ */
+.demo-panel-btn
+{
+    display: block;
+    font-size: 15px;
+    padding: 20px 40px ;
+    text-transform: uppercase;
+    border-radius: 4px ;
+    color: #fff ;
+    font-weight: bold;
+    margin: 20px  0 ;
+    background-color: #218fe6 ;
+    transition: all 0.3s ease-in-out;
+}
+.demo-panel-btn:hover
+{
+    background-color: #333 !important;
+}
+/* +++++++++  color palette  +++++++++ */
+.demo-panel-inner2  ul.color-palette
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.demo-panel-inner2  ul.color-palette    li
+{
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+.demo-panel-inner2  h6 ,
+.demo-panel-inner3  h6
+{
+    font-size: 18px  ;
+    margin: 20px 0 ;
+    font-weight: normal ;
+    color: #444;
+}
+/* +++++++++ images +++++++++ */
+.demo-panel-inner3
+{
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid #f00;  */
+}
+.demo-panel-inner3  ul 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    flex-wrap: wrap ;  
+}
+.demo-panel-inner3  ul   li
+{
+    width: 48% ;
+    border-radius: 2px ;
+    margin-bottom: 10px ;
+    cursor: pointer;
+    border: 2px solid #ccc ;
+    transition: all 0.3s ease-in-out ;
+}
+.demo-panel-inner3  ul   li:hover
+{
+    transform: scale(0.8);
+}
+.demo-panel-inner3  ul li   img
+{
+    width: 100% ;
+    height: 100% ;
+    border-radius: 2px ;
+}
+/* ################################## navbar section ################################# */
+.navbar
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #f00 ;  */
+}
+.navbar 	.navbarContainer
+{
+	width: 90% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;
+/*	border: 2px solid #0f0 ;  */
+}
+/*  ############ left part : logo ############ */
+.navbar 	.navbarContainer	.logo
+{
+	width: 18% ;
+	float: left ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #00f ;   */
+}
+.navbar 	.navbarContainer	.logo 	img
+{
+	width: 132px ; 
+	height: 53px ;
+    margin-top: 15px ;
+    margin-left: 20px ;
+}
+
+/* ############ menubar icon ############ */
+.navbar     .navbarContainer     input
+{
+	position: absolute ;
+	top: 5px ;
+	right: 5px ;
+	display: none ;
+}
+.menubarLabel
+{
+    position: absolute;
+	top:15px; 
+	right: 8px ;
+	cursor: pointer;
+	/* from  "0px" to "970px" في الشاشات المحمول  */
+	display: none ;
+/*	border: 2px solid #ff0;    */
+}
+.navbar .navbarContainer  .menubarLabel .menubarDiv1  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv2  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv3  
+{
+	margin: 6px;
+	width: 40px;
+	height: 5px;
+	padding: 1px;
+	background-color: #000 ;
+	/* smooth يحصل التحول بشكل x الي علامة ال menubar icon عشان لما يحصل تحويل لل */
+	transition: 0.4s ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv1  
+{
+	transform: rotate(-45deg) translate(-7px, 9px) ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv2 
+{
+	opacity: 0 ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv3  
+{
+	transform: rotate(45deg) translate(-7px, -9px) ;
+}
+.navbar .navbarContainer input:checked   ~     .links
+{
+	display: block ;
+}
+/* ############ right part : links ########### */
+.navbar  .navbarContainer   .links
+{
+	width: 82% ;
+	float: right;
+	text-align: right ;
+	height: auto ;
+	overflow: hidden ;
+    margin-top : 10px ;
+	/* border: 2px solid #00f ;    */
+}
+.navbar  .navbarContainer   .links	ul
+{
+	list-style: none ;
+}
+.navbar  .navbarContainer   .links	ul	li
+{
+	display: inline-block ;
+    padding: 10px 2px;
+    margin: 5px ;
+}
+.navbar  .navbarContainer   .links	ul	li   a
+{
+    position: relative; 
+	text-decoration: none ;
+	color: #000 ;
+	margin-right: 10px ;
+	font-size: 15px ;
+	font-weight: bold ;
+    padding: 8px ;
+	text-transform: uppercase ;
+/*	border: 2px solid #0ff ;   */
+}
+.navbar  .navbarContainer   .links  	ul	    li       a		img
+{
+	width: 20px ;
+	height: 20px;
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid var(--mainBk);
+    border-left:2px solid var(--mainBk);
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid var(--mainBk);
+    border-left:2px solid var(--mainBk);
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;    
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid var(--mainBk);
+    border-right:2px solid var(--mainBk);
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid var(--mainBk);
+    border-right:2px solid var(--mainBk);
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/*############################## hover on navbar ############################### */
+ /* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li   a:hover      span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid var(--mainBk);
+    border-left:2px solid var(--mainBk);
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid var(--mainBk);
+    border-left:2px solid var(--mainBk);
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid var(--mainBk);
+    border-right:2px solid var(--mainBk);
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid var(--mainBk);
+    border-right:2px solid var(--mainBk);
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ############################## Responsive ############################ */
+@media(min-width:0px) and (max-width:940px)
+{
+    .navbar .navbarContainer  .menubarLabel
+    {
+        display: block ;
+    }
+    .navbar .navbarContainer
+    {
+        width: 100% ;
+    }
+    /* ************** logo part ******************** */
+    .navbar .navbarContainer .logo
+    {
+        width: 250px ; 
+    }
+    /* ************** links part ******************** */
+    .navbar .navbarContainer  .links
+    {
+        width: 100% ; 
+        display: block ;
+        margin: 10px 0px ; 
+        text-align: center ;
+/*		border: 2px solid #f0f ;  */
+        display: none ;
+    }
+    /* ************** links part ******************** */
+    .navbar     .navbarContainer    .links    ul   li  
+    {
+        display: block ; 
+        margin: 35px 0px ;
+    }
+}
+/* ################################## header section #################################  */
+.header
+{
+	position: relative ;
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+	background-color: rgb(255,230,229);
+/*	border: 2px solid #ff0 ;   */
+}
+.header 	.headerContainer
+{
+	width: 85% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;
+/*	border: 2px solid #f0f ;   */
+}
+/* -------------------- left part : header info ------------------- */
+.header 	.headerInfo
+{
+	width: 48%;
+	margin-left: 0% ;
+	margin-right: 2% ;
+	float: left ;
+	margin: 60px 0px ; 
+/*	border: 3px solid #0ff ;	  */
+}
+.header 	.headerInfo		h2
+{
+	font-size: 55px ;
+	text-transform: capitalize ;
+	margin: 10px  0px ;
+}
+.header 	.headerInfo		p
+{
+	font-size: 16px;
+	line-height: 1.6 ;
+    margin-top: 40px ;
+}
+.header 	.headerInfo		.buyNowBtn
+{
+    padding: 15px 30px ;
+    background-color: var(--mainBk);
+    text-transform: uppercase ;
+    color: #fff ;
+    border: 0 ;
+    outline: 0 ;
+    cursor: pointer ;
+    border-radius: 25px ;
+    font-weight: bold ;
+    margin-top: 50px ;
+    transition: all 0.2s ease-in-out ;
+    -webkit-border-radius: 25px ;
+    -moz-border-radius: 25px ;
+    -ms-border-radius: 25px ;
+    -o-border-radius: 25px ;
+    -webkit-transition: all 0.2s ease-in-out ;
+    -moz-transition: all 0.2s ease-in-out ;
+    -ms-transition: all 0.2s ease-in-out ;
+    -o-transition: all 0.2s ease-in-out ;
+}
+.header 	.headerInfo		.buyNowBtn 	i
+{
+    font-size: 15px ;
+}
+.header 	.headerInfo		.buyNowBtn:hover
+{
+    background-color: #0075ff;
+}
+.header 	.headerInfo		.buyNowBtn:hover 	i
+{
+    transform: translateX(10px);
+    transition: all 0.5s ease-in-out ;
+    -webkit-transition: all 0.5s ease-in-out ;
+    -moz-transition: all 0.5s ease-in-out ;
+    -ms-transition: all 0.5s ease-in-out ;
+    -o-transition: all 0.5s ease-in-out ;
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+}
+/* -------------------- right part : header image ------------------- */
+.header 	.headerImg
+{
+	width: 48% ;
+	margin-left: 2% ;
+	margin-right: 0% ;
+	float: right ;
+/*	border: 3px solid #00f ;   */
+}
+.header 	.headerImg	  img
+{
+	width: 100% ;
+}
+/* ########################### Responsive ############################## */
+@media(min-width:0px) and (max-width:900px)
+{
+    .header 	.headerContainer
+    {
+        width: 65% ;  
+/*        border: 2px solid #0f0 ;          */
+    }
+    .header 	.headerInfo	   ,
+    .header 	.headerImg
+    {
+        width: 100% ;
+        float: none ;
+        margin: 20 auto ;
+        text-align: center ; 
+/*        border: 2px solid #f00 ;    */
+    }
+    .header 	.headerInfo		h2
+    {
+        font-size: 60px ;
+    }
+    .header 	.headerInfo		p
+    {
+	   font-size: 16px;
+    }
+    /* -------------------- right part : header image ------------------- */
+    .header 	.headerImg
+    {
+        margin: 40px 0px ;
+    }
+}
+@media(min-width:901px) and (max-width:1050px)
+{
+    /* -------------------- left part : header info ------------------- */
+    .header 	.headerInfo		h2
+    {
+        font-size: 45px ;
+    }
+    /* -------------------- right part : header image ------------------- */
+    .header 	.headerImg
+    {
+        margin: 40px 0px ;
+    }
+}
+/* ################################## Scroller Progressbar section #################################  */
+.scrollerProgress
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0 ;
+    height: 5px ;
+    background-color: var(--mainBk) ;
+    z-index: 999 ;
+    transition: width 0.5s ease ;
+    -webkit-transition: width 0.5s ease ;
+    -moz-transition: width 0.5s ease ;
+    -ms-transition: width 0.5s ease ;
+    -o-transition: width 0.5s ease ;
+}
+/* ################################## categories section ################################# */
+.categories
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #f00 ;   */
+}
+.categories 	.categoriesContainer
+{
+	width: 85% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;	
+    padding: 30px 0px ;
+/*	border: 2px solid #0f0 ;   */
+}
+.categories 	.categoriesContainer	.categoriesBox
+{
+	width: 31.3333% ;
+	float: left ;
+	height: auto ;
+	overflow: hidden ;
+	margin-top: 50px ;
+/*	border: 2px solid #f00 ;   */
+}
+.categories 	.categoriesContainer	.categoriesBox:nth-of-type(1)
+{
+	margin-left: 0% ;
+	margin-right: 2% ;
+}
+.categories 	.categoriesContainer	.categoriesBox:nth-of-type(2)
+{
+	margin-left: 1% ;
+	margin-right: 1% ;
+}
+.categories 	.categoriesContainer	.categoriesBox:nth-of-type(3)
+{
+	margin-left: 2% ;
+	margin-right: 0% ;
+}
+.categories 	.categoriesContainer	.categoriesBox	img
+{
+	width: 100% ;
+}	
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:900px)
+{
+    .categories 	.categoriesContainer	.categoriesBox
+    {
+        float: left;
+        margin-top: 0px ; 
+        margin-bottom: 15px ; 
+/*      border: 2px solid #ff0 ;     */
+    } 
+    .categories 	.categoriesContainer	.categoriesBox:nth-of-type(1) 
+    {
+        width: 48% ;
+        margin-left : 0% ;
+        margin-right: 2% ;   
+    }
+    .categories 	.categoriesContainer	.categoriesBox:nth-of-type(2) 
+    {
+         width: 48% ;
+         margin-left : 2% ;
+         margin-right: 0 ;   
+    }
+    .categories 	.categoriesContainer	.categoriesBox:nth-of-type(3)
+    {
+         width: 50% ;
+         margin-left : 25% ;
+         margin-right: 25% ;   
+    }   
+}
+/* ################################## products section ################################# */
+.products
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #f00 ;   */
+}
+.products  	.productsContainer
+{
+	width: 85% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;	
+/*	border: 2px solid #0f0 ;   */
+}
+.products  	.productsContainer	.productHeader
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #00f ;   */
+}
+/* -------------------- left part : h2 -------------------- */
+.products  	.productsContainer	.productHeader	.productH2Container
+{
+	width: 50% ;
+	float: left ;
+	padding: 10px ;
+/*	border: 2px solid #00f ;   */
+}
+.products  	.productsContainer	.productHeader	.productH2Container	.productH2
+{
+	text-transform: capitalize ;
+	font-size: 30px ;
+}
+/* -------------------- right part : selectbox  -------------------- */
+.products  	.productsContainer	.productHeader	.productSelectBoxContainer	
+{
+	width: 50% ;
+	float: right;
+	text-align: right ;
+/*	border: 2px solid #0f0 ;   */
+}
+.products  	.productsContainer		.productHeader	.productSelectBoxContainer	select
+{
+	cursor: pointer ;
+	padding: 15px ;
+	margin-top: 25px ;
+	font-weight: bold ;
+    border: 2px solid #ccc ;
+    outline: 0 ;
+}
+/*  ---------------------------- row 2 : categories box ---------------------------- */
+.products  	.productsContainer	.productsBox
+{
+	width: 23%     ;
+	overflow: hidden ;
+	float: left ;
+	margin: 1% ;
+/*	border: 2px solid #f00 ;   */
+}
+.products  	.productsContainer	.productsBox	img
+{
+	width:100% ;
+	height: 250px ;
+}
+.products  	.productsContainer	.productsBox	.stars
+{
+	color:var(--mainBk);
+}
+.products  	.productsContainer	.productsBox	p
+{
+	margin:  10px  0 ;
+}
+.products  	.productsContainer	.productsBox	.productsPara  ,
+.products  	.productsContainer	.productsBox	.price
+{
+	text-transform: capitalize ;
+	font-weight: bold ;
+	color: #888 ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:900px)
+{
+    /*  ---------------------------- row 2 : categories box ---------------------------- */
+    .products  	.productsContainer	.productsBox
+    {
+        width: 48% ;
+        float: left ;
+        margin: 1% ;
+    }
+}
+/* ################################## gallery section ################################# */
+.gallery
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 30px auto ;
+/*	border: 2px solid #00f ;   */
+}
+.gallery	.galleryContainer
+{
+	width:80% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 30px auto ;
+/*	border: 2px solid #f0f ;   */
+}
+/* ---------------------------- left part : gallery big And Sub Imgages  ---------------------------- */
+.gallery	.galleryContainer	.galleryImg
+{
+	width: 48% ;
+	margin-right: 2% ;
+	height: auto ;
+	overflow: hidden ;
+	float: left ;
+/*	border: 2px solid #f00 ;   */
+}
+/* ############ left part : gallery big And Sub Imgages : row 1 : big image ############# */
+.gallery	.galleryContainer	.galleryImg		.galleryBigImg	img
+{
+	width: 100% ;
+	height: 360px ;
+}
+/* ########### left part : gallery big And Sub Imgages : row 2 : sub images ############# */
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+    margin-bottom: 50px ;
+/*	border: 2px solid #0ff ;   */
+}
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg		img
+{
+	float: left ;
+	width: 23% ;
+	margin: 10px  0 ; 
+	cursor: pointer ;
+}
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg 		img:nth-of-type(1)
+{
+	margin-left: 0 ;
+	margin-right: 1% ;
+}
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg 		img:nth-of-type(2) ,
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg 		img:nth-of-type(3)
+{
+	margin-left: 1.5% ;
+	margin-right: 1.5% ;
+}
+.gallery	.galleryContainer	.galleryImg		.gallerySubImg 		img:nth-of-type(4)
+{
+	margin-left: 1% ;
+	margin-right: 0% ;
+}
+.addBorder
+{
+	border: 3px solid var(--mainBk) ; 
+}
+/* ----------------------------------- right part : gallery info ------------------------------------- */
+.gallery	.galleryContainer	.galleryInfo
+{
+	width:48% ;
+	height: auto ;
+	overflow: hidden ;
+	float: right ;
+/*	border: 2px solid #0f0 ;   */
+	margin-top: 20px ; 
+	margin-right: 2% ; 
+}
+/* ########## right part : gallery info : row 1 : links ########## */
+.gallery	.galleryContainer	.galleryInfo	.galleryRightPartLinks
+{
+	width: 100% ;
+/*	border: 2px solid #f00 ;   */
+}
+.gallery	.galleryContainer	.galleryInfo	.galleryRightPartLinks		a
+{
+	color: #888 ;
+	text-decoration: none ;
+	font-weight: bold ;
+}
+/*  ########## right part : gallery info : row 2 : header ########## */
+.gallery	.galleryContainer	.galleryInfo	.galleryRightPartHeader		h2
+{
+	font-size: 50px ;
+	margin : 15px  0px ;
+}
+/*  ########## right part : gallery info : row 3 : price ########## */
+.gallery	.galleryContainer	.galleryInfo	.galleryRightPartPrice		p
+{
+	margin: 10px 0 ;
+	font-weight: bold; 
+	font-size: 23px ;
+}
+/*  ########## right part : gallery info : row 4 : links ############### */
+.gallery	.galleryContainer	.galleryInfo	.galleryRightPartSelectBox	 select
+{
+	margin: 10px 0 ;
+	padding: 10px ;
+	cursor: pointer ;
+	font-weight: bold ;
+}
+/*  ########## right part : gallery info : row 5 : add to cart ########## */
+.gallery	.galleryContainer	.galleryInfo	.addToCart
+{
+	margin: 10px 0 ;
+}
+.gallery	.galleryContainer	.galleryInfo	.addToCart	.addToCartSpan
+{
+	display: inline-block;
+	border: 2px solid #ccc ;    
+	padding: 10px 18px ; 
+	margin-right: 20px ;
+	font-size: 20px ;
+	color: #222 ;
+}
+.gallery	.galleryContainer	.galleryInfo	.addToCart	.addCartBtn
+{
+	padding: 10px 30px ; 
+	background-color: var(--mainBk) ;
+	border: 0 ;
+	outline: 0 ;
+	border-radius: 20px ;
+	text-transform: capitalize ;
+	color: #fff ;
+	cursor: pointer ;
+	transition: 0.8s ;
+	font-size: 15px ;
+}
+.gallery	.galleryContainer	.galleryInfo	.addToCart	.addCartBtn:hover
+{
+	background-color: rgb(50,100,200) ;
+}
+/*  ########## right part : gallery info : row 6 :  product details  ########## */
+.gallery	.galleryContainer	.galleryInfo	.productDetails		h4
+{
+	display: inline-block ;
+	font-size: 23px ;
+	text-transform: uppercase ;
+	margin: 10px  0 ;
+	margin-right: 20px ;
+
+}
+.gallery	.galleryContainer	.galleryInfo	.productDetails		i
+{
+	display: inline-block ;
+	color: var(--mainBk);
+	font-size: 20px; 
+}
+/*  ########## right part : gallery info : row 7 : product details paragraph  ########## */
+.gallery	.galleryContainer	.galleryInfo	p
+{
+	font-size: 18px ; 
+	color: #999 ;
+	margin-top: 10px ;
+	line-height: 1.5 ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:900px)
+{
+    /* ------------------------ left part : gallery big And Sub Imgages  ------------------------- */
+    /* ------------------------------ right part : gallery info ---------------------------------- */   
+    .gallery	.galleryContainer	.galleryImg   ,
+    .gallery	.galleryContainer	.galleryInfo
+    {
+        width:100% ;
+        float: none ;
+    }
+}
+/* ################################## related Products section ################################# */
+.relatedProducts
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #f00 ;   */
+}
+.relatedProducts  	.relatedProductsContainer
+{
+	width: 90% ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0px auto ;	
+/*	border: 2px solid #0f0 ;   */
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader
+{
+	width: 90% ;
+	height: auto ;
+	overflow: hidden ;
+    margin: 0px auto ;
+/*	border: 2px solid #00f ;       */
+}
+/* ------------------------- left part : h2 -------------------- */
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.relatedProductsH2Container
+{
+	width: 50% ;
+	float: left ;
+	padding: 10px ;
+/*	border: 2px solid #00f ;   */
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.relatedProductsH2Container	.relatedProductsH2
+{
+    float: left ;
+	text-transform: capitalize ;
+	font-size: 30px ;
+}
+/* -------------------- right part : button -------------------- */
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.viewMoreBtnContainer	
+{
+    float: right ;
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.viewMoreBtnContainer	#viewMoreBtnId
+{
+    width: 150px ;
+    height: 50px ;
+    padding: 10px ;
+    margin-top: 20px ;
+    background-color: transparent ;
+    border: 1px solid #ccc ;
+    cursor: pointer ;
+    font-size: 18px ;
+    text-transform: capitalize ;
+    outline: 0 ;
+    transition: all 0.5s ease-in-out ; 
+    -webkit-transition: all 0.5s ease-in-out ; 
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.viewMoreBtnContainer	#viewMoreBtnId:hover
+{
+    background-color: var(--mainBk) ;
+    color: #fff ;
+}
+/*  ---------------------------- row 2 : categories box ---------------------------- */
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox
+{
+	width: 24% ;
+	overflow: hidden ;
+	float: left ;
+	margin-top: 2% ;
+    margin-left: 0 ;
+	margin-right: 1% ;
+/*	border: 2px solid #f00 ;   */
+} 
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox:nth-of-type(4) ,
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox:nth-of-type(8) 
+{
+    margin-right: 0%  ;
+}
+/* the class of 4 hidden products */
+.hiddenProduct
+{
+    display: none ;
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox	img
+{
+	width:100% ;
+	height: 250px ;
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox	.stars
+{
+	color: var(--mainBk);
+}
+.relatedProducts  	.relatedProductsContainer	.relatedProductsBox	p
+{
+	margin:  10px  0 ;
+	text-transform: capitalize ;
+}
+.relatedProducts .relatedProductsBoxContainer	.relatedProductsBox		.relatedProductsPara  ,
+.relatedProducts .relatedProductsBoxContainer	.relatedProductsBox		.relatedProductsPrice
+{
+	text-transform: capitalize ;
+	font-weight: bold ;
+	color: #888 ;
+}
+.clearBoth
+{
+    clear: both ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:660px)
+{
+    .relatedProducts  	.relatedProductsContainer	 .relatedProductsHeader .relatedProductsH2Container	.relatedProductsH2
+    {
+        font-size: 20px ;
+        margin-top: 20px ;
+    }
+    .relatedProducts  	.relatedProductsContainer	.relatedProductsHeader	.viewMoreBtnContainer	#viewMoreBtnId
+    {
+        width: 100px ;
+        height: 40px ;
+        font-size: 16px ;
+    }
+}
+@media(min-width:661px) and (max-width:940px)
+{
+    .relatedProducts  	.relatedProductsContainer	 .relatedProductsHeader .relatedProductsH2Container	.relatedProductsH2
+    {
+        font-size: 30px ;
+    }
+}
+@media(min-width:0px) and (max-width:940px)
+{
+    .relatedProducts  	.relatedProductsContainer    .relatedProductsContainer
+    {
+        width: 90% ;
+        text-align: center ;
+/*        border: 2px solid #0ff ;    */
+    }
+    /*  ---------------------------- row 2 : categories box ---------------------------- */
+    .relatedProducts  	.relatedProductsContainer	.relatedProductsBox
+    {
+        width: 46% ;
+        float: left;
+        margin: 2% ; 
+        margin-bottom: 10px ; 
+/*        border: 2px solid #ff0 ;    */
+    } 
+}
+/* ##################################### pagination : 5 spans ##################################### */
+.categoryPagination 
+{
+    clear: both ;
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    margin-top: 50px ;
+/*    border: 2px solid #0ff ;    */
+}
+.categoryPagination     .categoryPagin
+{
+    display: inline-block ;
+    width:50px ;
+    height: 50px ;
+    line-height: 50px ;
+    text-align: center ;
+    margin-right: 15px ;
+    border: 1px solid #ccc ;
+    font-size: 18px ;
+    cursor: pointer ;
+}
+.categoryPagination     .categoryPagin.active
+{
+    background-color: var(--mainBk) ;
+    color: #fff ;
+}
+.categoryPagination     .categoryPagin:hover
+{
+    background-color: var(--mainBk) ;
+    color: #fff ;
+}
+/* ######################################### smart Band section ########################################## */
+.smartBand
+{
+    width: 100% ;
+    height: auto; 
+    overflow: hidden ;
+	background-color: rgb(255,230,229);
+    margin-top: 50px ;
+/*    border: 2px solid #f0f ;    */
+}
+.smartBand  .smartBandContainer
+{
+    width: 75% ;
+    height: auto; 
+    overflow: hidden ;
+    margin: 0px auto ;
+    padding: 30px 0px ;
+/*    border: 2px solid #00f ;    */
+}
+/*  /////////// left part  : smartBand image  ////////////  */
+/*  /////////// right part : smartBand info  ////////////  */
+.smartBand  .smartBandContainer     .smartBandImg  ,
+.smartBand  .smartBandContainer     .smartBandInfo
+{
+    width: 45% ;
+/*    border: 2px solid #ff0 ;    */
+}
+/*  /////////// left part  : smartBand image  ////////////  */
+.smartBand  .smartBandContainer     .smartBandImg  
+{
+    float: left ;
+    margin-right: 5% ;
+}
+.smartBand  .smartBandContainer     .smartBandImg   img
+{
+    width: 100% ;
+    height: 300px ;
+}
+/*  /////////// right part : smartBand info  ////////////  */
+.smartBand  .smartBandContainer    .smartBandInfo
+{
+    float: right ;
+    margin-left: 5% ;
+}
+/* right part : smartBand info : paragraphs */
+.smartBand  .smartBandContainer    .smartBandInfo  .smartBandInfoPara1  ,
+.smartBand  .smartBandContainer    .smartBandInfo  .smartBandInfoPara2
+{
+    font-size: 16px ; 
+    line-height: 1.6 ;
+    margin: 0 ;
+    margin-bottom: 30px ;
+}
+.smartBand  .smartBandContainer    .smartBandInfo  .smartBandInfoPara2
+{
+    margin-top: 30px ;
+}
+/* right part : smartBand info : h3 */
+.smartBand  .smartBandContainer    .smartBandInfo  .smartBandInfoH3
+{
+    font-size: 55px ;
+    text-transform: capitalize ;
+    margin: 0 ;
+    margin-bottom: 20px ;
+}
+/* right part : smartBand info : button */
+.smartBand  .smartBandContainer    .smartBandInfo   .smartBandInfoBtn
+{
+    width: 120px ;
+    height: 40px ;
+    padding: 5px ;
+    margin-top: 30px ;
+    text-transform: capitalize ;
+    color: #fff ;
+    font-size: 16px ;
+    background-color: var(--mainBk) ;
+    border: 1px solid var(--mainBk) ;
+    border-radius: 20px ;
+    cursor: pointer ;
+    -webkit-transition: all 0.5s ease-in-out ;
+    -moz-transition: all 0.5s ease-in-out ;
+    transition: all 0.5s ease-in-out ;
+}
+.smartBand  .smartBandContainer    .smartBandInfo   .smartBandInfoBtn:hover
+{
+    background-color: firebrick  ;
+    border: 1px solid firebrick  ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:660px)
+{
+    .smartBand    .smartBandContainer
+    {
+        margin: 0 auto ;
+    }
+    /*  /////////// left part  : smartBand image  ////////////  */
+    /*  /////////// right part : smartBand info  ////////////  */
+    .smartBand    .smartBandContainer     .smartBandImg  ,
+    .smartBand    .smartBandContainer     .smartBandInfo
+    {
+        width: 100% ;
+        float: none ;
+        margin: 0 ;
+        margin-bottom: 20px ;
+/*        border: 2px solid #ff0 ;    */
+    }
+    .smartBand    .smartBandContainer     .smartBandImg  
+    {
+        margin-bottom: 50px ;
+    }
+}
+@media(min-width:661px) and (max-width:1072px)
+{
+     .smartBand    .smartBandContainer
+    {
+        width: 80% ;
+        margin : 0  auto ;
+        padding: 20px 0px ;
+    }
+    /*  /////////// left part  : smartBand image  ////////////  */
+    /*  /////////// right part : smartBand info  ////////////  */
+    .smartBand    .smartBandContainer     .smartBandImg  ,
+    .smartBand    .smartBandContainer     .smartBandInfo
+    {
+        width: 48% ;
+        margin: 1% ;
+/*        border: 2px solid #ff0 ;    */
+    }
+    /* right part : smartBand info : h3 */
+    .smartBand  .smartBandContainer    .smartBandInfo  .smartBandInfoH3
+    {
+        font-size: 35px ;
+    }
+}
+/* ####################################### testimonials section ######################################### */
+.testimonials
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    text-align: center ;
+/*    border: 2px solid #f00 ; */
+}
+.testimonials    .testimonialsContainer
+{
+    width: 80% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 20px auto ;
+    padding: 20px ;
+/*    border: 2px solid #0f0 ;    */
+}
+/* **************** testimonials persons **************** */
+/* ///////// testimonials person 1 ///////// */
+.testimonials    .testimonialsContainer     .testiBox
+{
+    width: 31.3333% ;
+    float: left ;
+    margin: 1% ;
+    margin-bottom: 20px; 
+    padding: 25px; 
+    box-shadow: 3px  3px 5px #ccc , 
+               -3px -3px 5px #ccc ,
+               -3px  3px 5px #ccc , 
+                3px -3px 5px #ccc ;
+}
+.testimonials    .testimonialsContainer     .testiBox   .testimonialsPara
+{
+    margin: 0 ;
+    margin-top: 20px ;
+    line-height: 1.5 ;
+}
+/* ++++++++ quote icon ++++++++ */
+.testimonials    .testimonialsContainer     .testiBox     .fa-quote-left
+{
+    font-size: 30px ;
+    color: var(--mainBk) ;
+}
+/* ++++++++ stars icon ++++++++ */
+.testimonials    .testimonialsContainer     .testiBox   .stars     .fa-star
+{
+    display: inline-block ;
+    margin: 10px 0px ;
+    color: var(--mainBk) ;
+}
+/* ++++++++ testimonials persons of image ++++++++ */
+.testimonials    .testimonialsContainer     .testiBox   .testimonialsImg
+{
+    display: block ;
+    border-radius: 50% ; 
+}
+.testimonials    .testimonialsContainer     .testiBox   .testimonialsImg    img
+{
+    width: 100px ;
+    height: 100px ;
+    border-radius: 50% ;
+    margin: 10px auto ;
+}
+.testimonials    .testimonialsContainer     .testiBox   .testiPersonName
+{
+    display: block ;
+}
+.testimonials    .testimonialsContainer     .testiBox   .testiPersonName    .testiPersonNameSpan
+{
+    font-size: 18px ;
+    font-weight: bold ;
+    text-transform: capitalize ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:600px)
+{
+     /* **************** testimonials persons **************** */
+    /* ///////// testimonials person 1 ///////// */
+    .testimonials    .testimonialsContainer     .testiBox
+    {
+        width: 100% ;
+        float: none ;
+        margin: 20px 0px ;
+    }   
+}
+@media(min-width:601px) and (max-width:990px)
+{
+    /* **************** testimonials persons **************** */
+    /* ///////// testimonials person 1 ///////// */
+    .testimonials    .testimonialsContainer     .testiBox
+    {
+        width: 48%  ;
+        float: left ;
+        margin-bottom: 10px ;
+    }   
+    .testimonials    .testimonialsContainer     .testiBox:nth-of-type(1)
+    {
+        margin-left: 0% ;
+        margin-right: 2% ;
+    }
+    .testimonials    .testimonialsContainer     .testiBox:nth-of-type(2)
+    {
+        margin-left: 2% ;
+        margin-right: 0% ;
+    }
+    .testimonials    .testimonialsContainer     .testiBox:nth-of-type(3)
+    {
+        margin-left : 26% ;
+        margin-right: 26% ;
+    }
+}
+/* ######################################## our sponsers section ####################################### */
+.ourSponsers
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+/*    border: 2px solid #00f ;    */
+}
+.ourSponsers    .ourSponsersContainer
+{
+    width: 80% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 30px auto ;
+/*    text-align: center ; */
+/*    border: 2px solid #00f ;    */
+}
+/* //////////// ourSponsers box 1 //////////// */
+.ourSponsers    .ourSponsersContainer   .sponsersBox
+{
+    display: inline-block ;
+    margin: 10px ;
+/*    border: 2px solid #ff0 ;    */
+}
+.ourSponsers    .ourSponsersContainer   .sponsersBox    img
+{
+    width:100% ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:600px)
+{
+    /* //////////// ourSponsers box 1 //////////// */
+    .ourSponsers    .ourSponsersContainer   .sponsersBox
+    {
+        width: 46% ;
+        float: left ;
+        margin: 2% ;
+    }
+}
+/* ############################################ footer section ######################################### */
+.footer
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    background-color: #000 ;
+    margin: 0 ;
+    margin-top: 50px  ;
+/*    border: 2px solid #0ff ; */
+}
+.footer     .footerContainer
+{
+    width: 85% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 20px auto ;
+/*    border: 2px solid #0ff ; */
+}
+/* ++++++++++++++++++++ boxes ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox1 ,
+.footer     .footerContainer    .footerBox2 ,
+.footer     .footerContainer    .footerBox3 ,
+.footer     .footerContainer    .footerBox4
+{
+    float: left ;
+    text-align: center ;
+/*    border: 2px solid #ff0 ;    */
+}
+/* ++++++++++++++++++++ box 1 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox1 
+{
+    width: 31% ;
+    margin-right: 2% ;    
+}
+/* ---- box1 : <h3> </h3> , <p></p> ---- */
+.footer     .footerContainer    .footerBox1H3   ,
+.footer     .footerContainer    .footerBox1Para 
+{
+    text-align: left ;
+}
+/* ++++++++++++++++++++ box 2 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox2
+{
+    width: 31% ;
+    margin-right: 2% ;  
+    color: #fff ;
+}
+/* ++++++++++++++++++++ box 3 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox3
+{
+    width: 15% ;
+    margin-right: 2% ;    
+}
+/* ++++++++++++++++++++ boxes header : h3 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox1   .footerBox1H3     ,
+.footer     .footerContainer    .footerBox2   .footerBox2H3     ,
+.footer     .footerContainer    .footerBox3   .footerBox3H3     ,
+.footer     .footerContainer    .footerBox4   .footerBox4H3
+{
+    font-size: 25px ;
+    color: #fff ;
+    text-transform: capitalize ;
+    margin-top: 0px ;
+    margin-bottom: 20px ;
+}
+/* googlePlay and appStore span */
+.footer     .footerContainer    .footerBox1     .googlePlaySpan     ,
+.footer     .footerContainer    .footerBox1     .appStoreSpan    
+{
+    width: 160px ;
+    display: inline-block ;
+/*    border: 2px solid #f0f ;    */
+}
+/*.footer     .footerContainer    .footerBox1     .logoFooterSpan */
+
+/* ++++++++++++++++++++ boxes header : h3 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox1   .googlePlaySpan  img    ,
+.footer     .footerContainer    .footerBox1   .appStoreSpan    img    
+{
+    width: 100% ;
+}
+.footer     .footerContainer    .footerBox2   .logoFooterSpan  img
+{
+    width: 60% ;
+}
+/* ++++++++++++++++++++ boxes paragraph : <p></p> ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox1   .footerBox1Para ,
+.footer     .footerContainer    .footerBox2   .footerBox2Para ,
+.footer     .footerContainer    .footerBox3   .footerBox3Para ,
+.footer     .footerContainer    .footerBox4   .footerBox4Para
+{
+    margin: 20px 0px ;
+    line-height: 1.6 ;
+    color: #666 ;
+    text-transform: capitalize ;
+}
+
+.footer     .footerContainer    .footerBox3     ul  ,
+.footer     .footerContainer    .footerBox4     ul
+{
+    list-style: none ;
+    padding: 0 ;
+    margin: 0 ;
+}
+.footer     .footerContainer    .footerBox3     ul  li  ,
+.footer     .footerContainer    .footerBox4     ul  li  
+{
+    margin: 10px 0px ; 
+}
+.footer     .footerContainer    .footerBox3     ul  li  a   ,
+.footer     .footerContainer    .footerBox4     ul  li  a
+{
+    text-decoration: none ;
+    color: #666 ;
+    text-transform: capitalize ;
+}
+/* ++++++++++++++++++++ box 4 ++++++++++++++++++++ */
+.footer     .footerContainer    .footerBox4
+{
+    width: 17% ;
+    margin-left: 0% ;    
+    margin-right: 0% ;    
+}
+/* footer : line */
+.footer     .footerLine
+{
+    display: block ;
+    width: 100% ;
+    border-radius: 20px ;
+}
+/* --------------------------- footer : line --------------------------- */
+.footer     .footerLine     .footerLineSpan
+{
+    display: block ;
+    width: 85% ;
+    margin: 20px auto ;
+    height: 1px ;
+    padding: 1px; 
+    border: 2px solid #666 ; 
+    background-color: #666 ;
+    border-radius: 20px ;
+}
+/* --------------------------- footer : copyright ------------------------- */
+.footer     .footerLine     .copyrightPara
+{
+    color: #666 ;
+    text-align: center ;
+    padding: 10px ;
+}
+/* ########################################## Responsive ########################################## */
+@media(min-width:0px) and (max-width:870px)
+{
+    /* ++++++++++++++++++++ boxes ++++++++++++++++++++ */
+    .footer     .footerContainer    .footerBox1 ,
+    .footer     .footerContainer    .footerBox2 ,
+    .footer     .footerContainer    .footerBox3 ,
+    .footer     .footerContainer    .footerBox4
+    {
+        width: 46% ;
+        height: 260px ;
+        float: left ;
+        margin-bottom: 20px ;
+        margin: 2% ;
+        text-align: left ;
+/*        border: 2px solid #ff0 ;    */
+    }
+    /* ++++++++++++++++++++ boxes header : h3 ++++++++++++++++++++ */
+    .footer     .footerContainer    .footerBox1   .footerBox1H3    
+    {
+        font-size: 20px ; 
+    }
+    /* ++++++++++++++++++++ boxes paragraph : <p></p> ++++++++++++++++++++ */
+    .footer     .footerContainer    .footerBox1   .footerBox1Para ,
+    .footer     .footerContainer    .footerBox2   .footerBox2Para ,
+    .footer     .footerContainer    .footerBox3   .footerBox3Para ,
+    .footer     .footerContainer    .footerBox4   .footerBox4Para
+    {
+        font-size: 16px ; 
+    }
+    /* --------------------------- footer : copyright ------------------------- */
+    .footer     .footerLine     .copyrightPara
+    {
+        font-size: 13px ;
+    }
+}
